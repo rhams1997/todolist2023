@@ -13,7 +13,10 @@ export  function Home() {
         placeholder='Digite sua tarefa...'
         placeholderTextColor='#555555'
       />
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        activeOperacity={0.7}
+      >
         <Text style={styles.buttonText}>
           Adicionar
         </Text>
