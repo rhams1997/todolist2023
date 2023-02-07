@@ -29,6 +29,18 @@ export const styles = StyleSheet.create({
       color: 'white',
       fontSize: 18,
       fontWeight: 'bold'
+    },
+    buttonText:{
+      backgroundColor: '#1F1E25',
+      padding: 15,
+      borderRadius: 22,
+      marginVertical: 10,
+      marginHorizontal: 20,
+      marginBottom: 10
+    },
+    textTask:{
+      color: 'white',
+      fontSize: 20
     }
 });
 
