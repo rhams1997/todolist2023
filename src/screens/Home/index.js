@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Text, SafeAreaView, TextInput, TouchableOpacity, ScrollView, FlatList } from 'react-native';
+import { MyButton } from './components/MyButton';
 
 import { styles } from './styles'
 export  function Home() {
@@ -25,28 +26,28 @@ export  function Home() {
         placeholderTextColor='#555555'
         onChangeText={setNewTask}
       />
-      <TouchableOpacity
-        style={styles.button}
-        activeOperacity={0.7}//Efeito de toque
-        onPress={handleAddNewTask}
       
-      >
-        <Text style={styles.buttonText}>
-          Adicionar
-        </Text>
-      </TouchableOpacity>
-      <Text style={styles.text}>
+      <MyButton 
+        onPress={handleAddNewTask}
+        activeOpacity={0.7}//Efeito de toque
+        title="Adicionar tarefa"
+      />
+
+      <Text style={styles.textTask}>
         Minhas Tarefas
       </Text>
       <FlatList
-      data={tasks}
-      keyExtractor={item => item}
-      renderItem={( {item} ) =>(
-        <TouchableOpacity style={styles.buttonTask}>
-            <Text style={styles.textTask}>
-              {item}
-            </Text>
-        </TouchableOpacity>
+        data={tasks}
+        keyExtractor={item => item}
+        renderItem={( {item} ) =>(
+          <TouchableOpacity 
+            style={styles.buttonTask}
+            >
+              <Text style={styles.textTask}
+              >
+                {item}
+              </Text>
+          </TouchableOpacity>
       )}
       />
     </SafeAreaView>
